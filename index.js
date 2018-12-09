@@ -15,7 +15,11 @@ var i = 0;
 // }
 
 function iterRequest (req, res){
-  i++;
+  if(req.url != '/favicon.ico'){
+    i++;
+    console.log('request');
+  }
+
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.write(i.toString());
   res.end();
