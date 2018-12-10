@@ -2,12 +2,19 @@ var http = require('http');
 var opn = require('opn');
 var fs = require('fs');
 
+function getPostRequestChunkValue(chunk){
+  let result = '';
+
+  //Tu jedziesz
+
+  return result;
+}
+
 function sendAminoPostHandler(req){
   let body = '';
 
   req.on('data', chunk =>{
-    body += chunk.toString();
-    body = body.slice(6);
+    body += getPostRequestChunkValue(chunk.toString());
   });
 
   req.on('end', () =>{
