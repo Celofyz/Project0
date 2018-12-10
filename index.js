@@ -23,4 +23,4 @@ function onRequest (req, res){
 }
 
 http.createServer(onRequest).listen(80);
-opn('http://localhost:8080', {app: 'firefox'});
+opn('http://localhost:80', {app: 'firefox'});
