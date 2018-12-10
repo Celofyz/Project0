@@ -4,8 +4,18 @@ var fs = require('fs');
 
 function getPostRequestChunkValue(chunk){
   let result = '';
+  let ChunkString = chunk.toString();
+  let lng = ChunkString.length;
 
-  //Tu jedziesz
+  for(var i = 0; i<lng; i++){
+    let ChunkCodeAt = ChunkString.charCodeAt(i);
+
+    if(ChunkCodeAt == 61){
+      ChunkString = ChunkString.slice(i+1);
+    }
+  }
+
+  result = ChunkString;
 
   return result;
 }
