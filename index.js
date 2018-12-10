@@ -3,10 +3,11 @@ var opn = require('opn');
 var fs = require('fs');
 
 function sendAminoPostHandler(req){
-  body = '';
+  let body = '';
 
   req.on('data', chunk =>{
     body += chunk.toString();
+    body = body.slice(6);
   });
 
   req.on('end', () =>{
