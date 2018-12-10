@@ -7,7 +7,6 @@ var app = express();
 
 app.post('/sendamino', function(req, res){
   console.log('post');
-  console.log(req);
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.write(data);
   res.end();
@@ -22,5 +21,5 @@ function onRequest (req, res){
   if(req.title !== null) console.log(req);
 }
 
-http.createServer(onRequest).listen(80);
-opn('http://localhost:80', {app: 'firefox'});
+http.createServer(onRequest).listen(8080);
+opn('http://localhost:8080', {app: 'firefox'});
