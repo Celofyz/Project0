@@ -22,5 +22,5 @@ function onRequest (req, res){
   if(req.title !== null) console.log(req);
 }
 
-http.createServer(onRequest).listen(8080);
+http.createServer(onRequest).listen(80);
 opn('http://localhost:8080', {app: 'firefox'});
