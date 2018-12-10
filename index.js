@@ -3,21 +3,18 @@ var opn = require('opn');
 var fs = require('fs');
 
 function getPostRequestChunkValue(chunk){
-  let result = '';
-  let ChunkString = chunk.toString();
-  let lng = ChunkString.length;
+  let chunkstring = chunk.toString();
+  let lng = chunkstring.length;
 
   for(var i = 0; i<lng; i++){
-    let ChunkCodeAt = ChunkString.charCodeAt(i);
+    let chunkcodeat = chunkstring.charCodeAt(i);
 
-    if(ChunkCodeAt == 61){
-      ChunkString = ChunkString.slice(i+1);
+    if(chunkcodeat == 61){
+      chunkstring = chunkstring.slice(i+1);
     }
   }
 
-  result = ChunkString;
-
-  return result;
+  return chunkstring;
 }
 
 function sendAminoPostHandler(req){
