@@ -5,14 +5,13 @@ var fs = require('fs');
 function onRequest (req, res){
   fs.readFile('body.html', function(err, data){
 
-    switch (req.method){
-      case "GET":
-        console.log('GET');
-        break;
-      case "POST":
-        console.log('POST');
-        break;
-      default: break;
+    if(req.method == 'POST'){
+      switch(req.url){
+        case "/sendamino":
+          console.log("sending amino");
+          break;
+        default: break;
+      }
     }
 
     res.writeHead(200, {'Content-Type': 'text/html'});
