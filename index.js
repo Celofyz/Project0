@@ -1,6 +1,7 @@
 var http = require('http');
 var opn = require('opn');
 var fs = require('fs');
+var aminoList = require('./AminoList');
 
 function getPostRequestChunkValue(chunk){
   let chunkstring = chunk.toString();
@@ -19,14 +20,8 @@ function getPostRequestChunkValue(chunk){
 }
 
 function sendAminoPostHandler(req){
-  let body = '';
-
   req.on('data', chunk =>{
-    body += getPostRequestChunkValue(chunk.toString());
-  });
-
-  req.on('end', () =>{
-    console.log(body);
+    aminoList.addAmino(getPostRequestChunkValue(chunk.toString()));
   });
 }
 
@@ -44,6 +39,7 @@ function onRequest (req, res){
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
+    res.write(aminoList.get());
     res.end();
   });
 }
