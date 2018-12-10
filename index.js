@@ -18,7 +18,6 @@ function onRequest (req, res){
     res.write(data);
     res.end();
   });
-  if(req.title !== null) console.log(req);
 }
 
 http.createServer(onRequest).listen(8080);
