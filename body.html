@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>Amino selector</title>
 
-    <script type="text/javascript" src="testowy.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/amino.css" />
 
   </head>
   <body>
     <h1>Amino selector</h1>
     <p>Type aminos you wanna watch and I will choose one for you</p>
 
-    <form id="amino-input" method="POST" action="/sendamino">
+    <form id="amino-input" method="POST" action="/sendamino"  enctype="multipart/form-data">
       <label for="title"> Type the title </label>
       <input type="text" name="title" placeholder="Title Goes Here">
-      <input type="submit" value="submit">
+      <input type="submit" value="Submit">
     </form>
   </body>
 </html>
