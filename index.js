@@ -11,6 +11,7 @@ function getPostRequestChunkValue(chunk){
 
     if(chunkcodeat == 61){
       chunkstring = chunkstring.slice(i+1);
+      return chunkstring;
     }
   }
 
