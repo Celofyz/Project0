@@ -2,7 +2,9 @@ var http = require('http');
 var opn = require('opn');
 var fs = require('fs');
 var aminoList = require('./AminoList');
+var moonPhase = require('./MoonPhaseCalculator');
 
+var time = new Date();
 
 function getPostRequestChunkValue(chunk){
   let chunkstring = chunk.toString();
@@ -50,6 +52,8 @@ function onRequest (req, res){
     fs.readFile('body.html', function(err, data){
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
+      res.write(' Moon phase: ' + moonPhase.phase(time.getYear(), time.getMonth(), time.getDay()));
+      res.write(' Moon phase: ' + moonPhase.phase(2018, 12, 11));
       res.write(aminoList.get());
       res.end();
     });
