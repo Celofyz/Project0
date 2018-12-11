@@ -38,8 +38,9 @@ function onRequest (req, res){
       case "/clearAminos":
         aminoList.clearAminos();
         break;
-      case "/uname":
-        
+      case "/inputname":
+        console.log('jakies imie dotarlo');
+        break;
       default: break;
     }
   }
