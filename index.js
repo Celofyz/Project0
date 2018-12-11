@@ -52,8 +52,7 @@ function onRequest (req, res){
     fs.readFile('body.html', function(err, data){
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
-      res.write(' Moon phase: ' + moonPhase.phase(time.getYear(), time.getMonth(), time.getDay()));
-      res.write(' Moon phase: ' + moonPhase.phase(2018, 12, 11));
+      res.write(' Moon phase: ' + moonPhase.phase(time.getFullYear(), time.getMonth() + 1, time.getDate()));
       res.write(aminoList.get());
       res.end();
     });
