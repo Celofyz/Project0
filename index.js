@@ -2,7 +2,7 @@ var http = require('http');
 var opn = require('opn');
 var fs = require('fs');
 var aminoList = require('./AminoList');
-var moonPhase = require('./MoonPhaseCalculator');
+var random = require('./unrandomThings');
 
 var time = new Date();
 
@@ -38,6 +38,8 @@ function onRequest (req, res){
       case "/clearAminos":
         aminoList.clearAminos();
         break;
+      case "/uname":
+        
       default: break;
     }
   }
