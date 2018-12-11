@@ -20,6 +20,10 @@ form{
   margin-bottom: 25px;
 }
 
+form label{
+  font-size: 1.8em;
+}
+
 label{
   font-size: 2.5em;
 }
@@ -34,6 +38,18 @@ input[type=text]{
   margin-top: 15px;
   margin-bottom: 20px;
   font-size: 2.5em;
+}
+
+input[type=text]{
+  color: black;
+  /*text-shadow: 0 0 0 #000;*/
+  border: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 input[type=submit]{
@@ -59,4 +75,8 @@ a{
 
 .notlast{
   animation: none;
+}
+
+.notlast span{
+  color: red;
 }
