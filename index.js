@@ -2,11 +2,14 @@ var http = require('http');
 var opn = require('opn');
 var fs = require('fs');
 var aminoList = require('./AminoList');
-//var express = require('express');
-//var app = express();
-//var path = require('path');
+var express = require('express');
+var app = express();
+var path = require('path');
 //Tutaj kurna nie wiem.
-//app.use(express.static(path.join(__dirname, 'public')));
+var publicfolder = path.join(__dirname, 'public');
+app.use(express.static('public'));
+console.log(publicfolder);
+
 
 function getPostRequestChunkValue(chunk){
   let chunkstring = chunk.toString();
