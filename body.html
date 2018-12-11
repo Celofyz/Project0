@@ -14,7 +14,15 @@
     <br>
     <form id="amino-input" method="POST" action="/sendamino" enctype="text/plain"></form>
 
+    <form id="name-input" method="POST" action="/inputname" enctype="text/plain">
+
+      <label for="uname"> What is your name? </label>
+      <input type="text" name="uname" autocomplete="off" placeholder="your name">
+
+    </form>
+
     <form id="amino-clear" method="POST" action="/clearAminos"></form>
+
 
     <label for="title"> Type the title: </label><br>
     <input type="text" name="title" placeholder="Title Goes Here" autofocus autocomplete="off" form="amino-input"><br>
