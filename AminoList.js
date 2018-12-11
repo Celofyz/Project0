@@ -8,9 +8,14 @@ module.exports = {
   get: function(){
     var list = '';
 
-    amiList.forEach(function(element){
-      list = list + "<a>" + element + "</a>" + "<br>";
-    });
+    for(var i = 0; i < amiList.length; i++){
+      if(i != amiList.length - 1{
+        list = list + "<a>" + amiList[i] + "</a>" + "<br>";
+      }else{
+        list = list + "<a>" + amiList[i] + "</a>" + "<br>"; //ostatni element
+      }
+
+    }
 
     return list;
   }
