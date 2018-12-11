@@ -57,6 +57,6 @@ a{
     100% { opacity:1; }
 }
 
-#notlast{
+.notlast{
   animation: none;
 }
