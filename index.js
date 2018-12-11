@@ -33,6 +33,9 @@ function onRequest (req, res){
       case "/sendamino":
         sendAminoPostHandler(req);
         break;
+      case "/clearAminos":
+        aminoList.clearAminos();
+        break;
       default: break;
     }
   }

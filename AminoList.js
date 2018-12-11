@@ -5,6 +5,10 @@ module.exports = {
     amiList.push(amino);
   },
 
+  clearAminos: function (){
+    amiList = [];
+  },
+
   get: function(){
     var list = '';
 
