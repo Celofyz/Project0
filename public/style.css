@@ -28,7 +28,11 @@ input[type=text]{
   color: black;
   /*text-shadow: 0 0 0 #000;*/
   border: none;
-  width: 15em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
   font-size: 2.5em;
 }
 
@@ -38,6 +42,7 @@ input[type=submit]{
   background-color: #000;
   border-radius: 6px;
   border: none;
+  margin-bottom: 20px;
 }
 
 a{
