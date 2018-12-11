@@ -46,7 +46,7 @@ function onRequest (req, res){
 
   if(req.url.indexOf('css') != -1){
     fs.readFile('public/style.css', function(err, data){
-      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.writeHead(200, {'Content-Type': 'text/css'});
       res.write(data);
       res.end();
     });
