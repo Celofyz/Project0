@@ -9,7 +9,7 @@ module.exports = {
     var list = '';
 
     amiList.forEach(function(element){
-      list = list + element + "\n";
+      list = list + element + "<br>";
     });
 
     return list;
