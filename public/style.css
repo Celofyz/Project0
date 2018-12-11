@@ -16,11 +16,6 @@ p{
   margin-top: 0;
 }
 
-a{
-  padding: 2px;
-  font-size: 2em;
-}
-
 form{
   margin-bottom: 25px;
 }
@@ -43,4 +38,20 @@ input[type=submit]{
   background-color: #000;
   border-radius: 6px;
   border: none;
+}
+
+a{
+  animation: 1s ease normal forwards 1 fadein;
+  padding: 2px;
+  font-size: 2em;
+}
+
+@keyframes fadein{
+    0% { opacity:0; }
+    33% { opacity:0; }
+    100% { opacity:1; }
+}
+
+#notlast{
+  animation: none;
 }
