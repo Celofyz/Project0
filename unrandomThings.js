@@ -28,10 +28,14 @@ module.exports = {
     var time = new Date();
     var seed = time.getUTCSeconds() + phase(time.getFullYear(), time.getMonth() + 1, time.getDate());
     var randomElementId = seed % list.length;
-    return list[randomElementId];
-  },
+    var picked = list[randomElementId];
 
-  sinus: function(month, day){
+    picked = "<p id='Picked'>" + picked + '</p>';
+
+    return picked;
+    },
+
+  sin: function(month, day){
     var sinus = day / month;
     return sinus;
   }

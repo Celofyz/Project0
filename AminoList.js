@@ -26,9 +26,5 @@ module.exports = {
 
   getList: function(){
     return amiList;
-  },
-
-  pickAmino: function(){
-    var picked = "<p id='Picked'>" + zmiennawynik + '</p>';
   }
 }

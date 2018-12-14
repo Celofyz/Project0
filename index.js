@@ -52,17 +52,13 @@ function onRequest (req, res){
         console.log('jakies imie dotarlo');
         htmlPath = 'body.html'
         break;
-      case "/clearAminos":
-        aminoList.clearAminos();
-        htmlPath = 'body.html'
-        break;
       default: break;
     }
   }else if(req.method == 'GET'){
     switch(req.url){
       case "/getrandomamino":
         getRandomAmino();
-        htmlPath = 'body.html'
+        htmlPath = 'wynik.html'
         break;
       default:
         htmlPath = 'body.html'
