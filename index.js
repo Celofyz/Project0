@@ -34,29 +34,26 @@ function getRandomAmino(){
 
 function onRequest (req, res){
 
-  var cssPath = '';
-  var htmlPath = '';
+  /*defaultowe*/
+  var cssPath = 'public/style.css';
+  var htmlPath = 'body.html';
 
   if(req.method == 'POST'){
     switch(req.url){
       case "/sendamino":
         sendAminoPostHandler(req);
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
       case "/clearAminos":
         aminoList.clearAminos();
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
       case "/inputname":
         console.log('jakies imie dotarlo');
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
       case "/clearAminos":
         aminoList.clearAminos();
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
       default: break;
@@ -65,11 +62,9 @@ function onRequest (req, res){
     switch(req.url){
       case "/getrandomamino":
         getRandomAmino();
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
       default:
-        cssPath = 'public/style.css'
         htmlPath = 'body.html'
         break;
     }
