@@ -34,39 +34,55 @@ function getRandomAmino(){
 
 function onRequest (req, res){
 
+  var cssPath = '';
+  var htmlPath = '';
+
   if(req.method == 'POST'){
     switch(req.url){
       case "/sendamino":
         sendAminoPostHandler(req);
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
         break;
       case "/clearAminos":
         aminoList.clearAminos();
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
         break;
       case "/inputname":
         console.log('jakies imie dotarlo');
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
         break;
       case "/clearAminos":
         aminoList.clearAminos();
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
         break;
       default: break;
     }
   }else if(req.method == 'GET'){
     switch(req.url){
       case "/getrandomamino":
-        console.log("GET");
         getRandomAmino();
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
+        break;
+      default:
+        cssPath = 'public/style.css'
+        htmlPath = 'body.html'
         break;
     }
   }
 
   if(req.url.indexOf('css') != -1){
-    fs.readFile('public/style.css', function(err, data){
+    fs.readFile(cssPath, function(err, data){
       res.writeHead(200, {'Content-Type': 'text/css'});
       res.write(data);
       res.end();
     });
   }else{
-    fs.readFile('body.html', function(err, data){
+    fs.readFile(htmlPath, function(err, data){
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
       res.write(aminoList.get());
