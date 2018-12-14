@@ -26,7 +26,7 @@ module.exports = {
 
   randomTitle: function(list){
     var time = new Date();
-    var seed = time.getUTCSeconds();// + phase(time.getFullYear(), time.getMonth() + 1, time.getDate());
+    var seed = time.getUTCSeconds() + phase(time.getFullYear(), time.getMonth() + 1, time.getDate());
     var randomElementId = seed % list.length;
 
     console.log('seed ' +  seed);
