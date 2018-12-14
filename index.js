@@ -45,15 +45,15 @@ function onRequest (req, res){
       case "/inputname":
         console.log('jakies imie dotarlo');
         break;
-      case "/getrandomamino":
-        getRandomAmino();
+      case "/clearAminos":
+        aminoList.clearAminos();
         break;
       default: break;
     }
   }else if(req.method == 'GET'){
     switch(req.url){
-      case "/clearAminos":
-        aminoList.clearAminos();
+      case "/getrandomamino":
+        getRandomAmino();
         break;
     }
   }
