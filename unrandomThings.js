@@ -28,11 +28,6 @@ module.exports = {
     var time = new Date();
     var seed = time.getUTCSeconds() + phase(time.getFullYear(), time.getMonth() + 1, time.getDate());
     var randomElementId = seed % list.length;
-
-    console.log('seed ' +  seed);
-    console.log('list.length ' + list.length);
-    console.log('randomElementId ' + randomElementId);
-    console.log(list[randomElementId]);
     return list[randomElementId];
   },
 
