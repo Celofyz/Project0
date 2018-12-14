@@ -13,6 +13,8 @@
     <p>Type aminos you wanna watch and I'll' choose one for you</p>
     <br>
     <form id="amino-input" method="POST" action="/sendamino" enctype="text/plain"></form>
+    <form id="amino-clear" method="POST" action="/clearAminos"></form>
+    <form id="amino-pick" method="GET" action="/getrandomamino" enctype="text/plain"></form>
 
     <form id="name-input" method="POST" action="/inputname" enctype="text/plain">
 
@@ -21,12 +23,11 @@
 
     </form>
 
-    <form id="amino-clear" method="POST" action="/clearAminos"></form>
-
 
     <label for="title"> Type the title: </label><br>
     <input type="text" name="title" placeholder="Title Goes Here" autofocus autocomplete="off" form="amino-input"><br>
     <input type="submit" value="Submit" form="amino-input">
-    <input type="submit" value="Reset List" form="amino-clear"><br>
+    <input type="submit" value="Reset List" form="amino-clear">
+    <input type="submit" value="Pick" form="amino-pick"><br>
   </body>
 </html>

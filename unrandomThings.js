@@ -34,5 +34,10 @@ module.exports = {
     console.log('randomElementId ' + randomElementId);
     console.log(list[randomElementId]);
     return list[randomElementId];
+  },
+
+  sinus: function(month, day){
+    var sinus = day / month;
+    return sinus;
   }
 }
