@@ -22,5 +22,9 @@ module.exports = {
     }
 
     return list;
+  },
+
+  getList: function(){
+    return amiList;
   }
 }

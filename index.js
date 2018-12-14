@@ -29,7 +29,7 @@ function sendAminoPostHandler(req){
 }
 
 function getRandomAmino(){
-  //TODO: wyswietlanie wylosowanego amino
+  random.randomTitle(aminoList.getList());
 }
 
 function onRequest (req, res){
@@ -53,6 +53,7 @@ function onRequest (req, res){
   }else if(req.method == 'GET'){
     switch(req.url){
       case "/getrandomamino":
+        console.log("GET");
         getRandomAmino();
         break;
     }
