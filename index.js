@@ -28,6 +28,10 @@ function sendAminoPostHandler(req){
   });
 }
 
+function getRandomAmino(){
+  //TODO: wyswietlanie wylosowanego amino
+}
+
 function onRequest (req, res){
 
   if(req.method == 'POST'){
@@ -41,7 +45,16 @@ function onRequest (req, res){
       case "/inputname":
         console.log('jakies imie dotarlo');
         break;
+      case "/getrandomamino":
+        getRandomAmino();
+        break;
       default: break;
+    }
+  }else if(req.method == 'GET'){
+    switch(req.url){
+      case "/clearAminos":
+        aminoList.clearAminos();
+        break;
     }
   }
 
@@ -55,7 +68,6 @@ function onRequest (req, res){
     fs.readFile('body.html', function(err, data){
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
-      res.write(' Moon phase: ' + random.phase(time.getFullYear(), time.getMonth() + 1, time.getDate()));
       res.write(aminoList.get());
       res.end();
     });
