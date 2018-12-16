@@ -68,24 +68,14 @@ a{
   font-size: 2em;
 }
 
-@keyframes fadein{
-    0% { opacity:0; }
-    33% { opacity:0; }
-    100% { opacity:1; }
-}
-
 .notlast{
   animation: none;
-}
-
-.notlast span{
-  color: red;
 }
 
 #Picked{
   color: red;
   font-size: 5em;
-  animation: 3s ease normal forwards 3 fadein;
+  animation: 3s ease normal forwards 1 fadein;
   padding: 2px;
 }
 

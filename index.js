@@ -73,12 +73,26 @@ function onRequest (req, res){
       res.end();
     });
   }else{
-    fs.readFile(htmlPath, function(err, data){
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.write(aminoList.get());
-      res.end();
-    });
+    switch(req.url){
+      case "/getrandomamino":
+        fs.readFile(htmlPath, function(err, data){
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(data);
+          res.write(random.randomTitle(aminoList.getList()));
+          //res.write(random.sin(time.getMonth(), time.getDate())); nie działa. :/
+          res.end();
+        });
+          break;
+      default:
+        fs.readFile(htmlPath, function(err, data){
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(data);
+          res.write(aminoList.get());
+          res.end();
+        });
+          break;
+    }
+
   }
 }
 
