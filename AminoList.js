@@ -2,7 +2,11 @@ var amiList = [];
 
 module.exports = {
   addAmino: function (amino){
-    amiList.push(amino);
+    if(amino.length < 3){
+      console.log('Puste');
+    }else{
+      amiList.push(amino);
+    }
   },
 
   clearAminos: function (){
