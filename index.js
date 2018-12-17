@@ -52,7 +52,6 @@ function onRequest (req, res){
   var htmlPath = 'body.html';
 
   var requestUrl = String(urlFixer(req.url));
-  console.log(requestUrl);
 
   if(req.method == 'POST'){
     switch(requestUrl){
@@ -73,7 +72,6 @@ function onRequest (req, res){
   }else if(req.method == 'GET'){
     switch(requestUrl){
       case "/getrandomamino":
-        console.log('suck');
         getRandomAmino();
         htmlPath = 'wynik.html'
         break;
