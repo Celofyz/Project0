@@ -32,14 +32,30 @@ function getRandomAmino(){
   random.randomTitle(aminoList.getList());
 }
 
+/*Metoda obcina znak zapytania z konca linku
+ *znak zapytania jest dodawany do getów przez chromium
+ *przez niego serwer zle odbiera geta*/
+function urlFixer(url){
+  url.ParseS
+  if(url.slice(-1) == '?'){
+    var urlLength = String(url).length - 1;
+    console.log(urlLength);
+    return url.substr(0, urlLength);
+  }
+  return url;
+}
+
 function onRequest (req, res){
 
   /*defaultowe*/
   var cssPath = 'public/style.css';
   var htmlPath = 'body.html';
 
+  var requestUrl = String(urlFixer(req.url));
+  console.log(requestUrl);
+
   if(req.method == 'POST'){
-    switch(req.url){
+    switch(requestUrl){
       case "/sendamino":
         sendAminoPostHandler(req);
         htmlPath = 'body.html'
@@ -55,8 +71,9 @@ function onRequest (req, res){
       default: break;
     }
   }else if(req.method == 'GET'){
-    switch(req.url){
+    switch(requestUrl){
       case "/getrandomamino":
+        console.log('suck');
         getRandomAmino();
         htmlPath = 'wynik.html'
         break;
@@ -73,7 +90,7 @@ function onRequest (req, res){
       res.end();
     });
   }else{
-    switch(req.url){
+    switch(requestUrl){
       case "/getrandomamino":
         fs.readFile(htmlPath, function(err, data){
           res.writeHead(200, {'Content-Type': 'text/html'});
