@@ -15,18 +15,17 @@
     <form id="amino-clear" method="POST" action="/clearAminos"></form>
     <form id="amino-pick" method="GET" action="/getrandomamino" enctype="text/plain"></form>
 
-    <form id="name-input" method="POST" action="/inputname" enctype="text/plain">
+    <form id="name-input" method="POST" action="/inputname" enctype="text/plain" onsubmit="return confirm('Potwierdź');">
 
       <label for="uname"> What is your name? </label>
       <input type="text" name="uname" autocomplete="off" placeholder="your name">
 
     </form>
 
-
     <label for="title"> Type the title: </label><br>
     <input type="text" name="title" placeholder="Title Goes Here" autofocus autocomplete="off" form="amino-input"><br>
-    <input type="submit" value="Submit" form="amino-input">
-    <input type="submit" value="Reset List" form="amino-clear">
-    <input type="submit" value="Pick" form="amino-pick"><br>
+    <input type="submit" id="SubmitB" value="Add to List" form="amino-input" disabled>
+    <input type="submit" id="ResetB" value="Reset List" form="amino-clear" disabled>
+    <input type="submit" id="PickB" value="Pick" form="amino-pick" disabled><br>
   </body>
 </html>

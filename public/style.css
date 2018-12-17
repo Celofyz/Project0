@@ -63,6 +63,11 @@ input[type=submit]{
   margin-bottom: 20px;
 }
 
+input[type=submit]:disabled{
+  color: #fff;
+  background-color: #808080;
+}
+
 a{
   animation: 1s ease normal forwards 1 fadein;
   padding: 2px;
