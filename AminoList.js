@@ -3,7 +3,7 @@ var amiList = [];
 module.exports = {
   addAmino: function (amino){
     if(amino.length < 3){
-      console.log('Puste');
+      return;
     }else{
       amiList.push(amino);
     }
