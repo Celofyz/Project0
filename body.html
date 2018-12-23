@@ -7,13 +7,36 @@
     <link rel="stylesheet" type="text/css" href="public/style.css" />
     <link href='http://fonts.googleapis.com/css?family=Aladin&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 
+    <script>
+
+      function Pizza(){
+        var usernameGET = prompt("What is your name?");
+        if (usernameGET != null) {
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+    </script>
+
   </head>
   <body>
+    <div id="dialogoverlay">
+    </div>
+      <div id="dialogbox">
+      <div>
+        <div id="dialogboxhead"></div>
+        <div id="dialogboxbody"></div>
+        <div id="dialogboxfoot"></div>
+      </div>
+    </div>
+
     <h1>Amino selector</h1>
     <p>Type aminos you wanna watch and I'll' choose one for you</p>
     <form id="amino-input" method="POST" action="/sendamino" enctype="text/plain"></form>
     <form id="amino-clear" method="POST" action="/clearAminos"></form>
-    <form id="amino-pick" method="GET" action="/getrandomamino" enctype="text/plain" onsubmit="return confirm('Potwierdź');"></form>
+    <form id="amino-pick" method="GET" action="/getrandomamino" enctype="text/plain" onsubmit="return Pizza()"></form>
 
     <!-- <form id="name-input" method="POST" action="/inputname" enctype="text/plain">
 
