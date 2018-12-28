@@ -74,6 +74,8 @@ function onRequest (req, res){
     switch(requestUrl){
       case "/getrandomamino":
         getRandomAmino();
+        //sinus zdaje się działa.
+        console.log(random.sin(time.getMonth(), time.getDay()));
         htmlPath = 'wynik.html'
         break;
       default:

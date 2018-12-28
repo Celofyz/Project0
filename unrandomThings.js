@@ -49,7 +49,11 @@ module.exports = {
     },
 
   sin: function(month, day){
-    var sinus = day / month;
+    if(month>day){
+      var sinus = day / month;
+      sinus = parseFloat(sinus.toFixed(2));
+      return sinus;
+    }
     return sinus;
   }
 }
