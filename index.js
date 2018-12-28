@@ -94,7 +94,7 @@ function onRequest (req, res){
         fs.readFile(htmlPath, function(err, data){
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.write(data);
-          res.write(random.randomTitle(aminoList.getList()));
+          res.write(random.randomTitle(aminoList.getList(), 'tymczasowyNickTuBedzieWArgumencieLecialo'));
           res.end();
         });
           break;
@@ -103,10 +103,10 @@ function onRequest (req, res){
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.write(data);
           //Test kod - trzeba machnąć module prompt, bo takiego nie mam. Ale ja nie umiem tu w pliczki to zostawiam Tobie.
-          prompt.start();
+          /*prompt.start();
           prompt.get(['username'], function(err, result){
             console.log(result.username);
-          });
+          });*/
           //Test kod end
           res.write(aminoList.get());
           res.end();

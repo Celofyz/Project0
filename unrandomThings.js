@@ -22,11 +22,24 @@ function phase (year, month, day){
   return phase;
 }
 
+function name (username){
+  var length = username.length;
+  var sum = 0;
+
+  for (var i = 0; i < length; i++){
+    sum = sum + username.charCodeAt(i);
+  }
+
+  return sum;
+}
+
 module.exports = {
 
-  randomTitle: function(list){
+  randomTitle: function(list, username){
     var time = new Date();
-    var seed = time.getUTCSeconds() + phase(time.getFullYear(), time.getMonth() + 1, time.getDate());
+    var seed = time.getUTCSeconds()
+                + phase(time.getFullYear(), time.getMonth() + 1, time.getDate())
+                + name(String(username));
     var randomElementId = seed % list.length;
     var picked = list[randomElementId];
 
