@@ -66,7 +66,7 @@ function onRequest (req, res){
         break;
       case "/inputname":
         console.log('jakies imie dotarlo');
-        htmlPath = 'body.html'
+        htmlPath = 'inputname.html'
         break;
       default: break;
     }
@@ -74,8 +74,6 @@ function onRequest (req, res){
     switch(requestUrl){
       case "/getrandomamino":
         getRandomAmino();
-        //sinus zdaje się działa.
-        console.log(random.sin(time.getMonth(), time.getDay()));
         htmlPath = 'wynik.html'
         break;
       default:
@@ -97,6 +95,13 @@ function onRequest (req, res){
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.write(data);
           res.write(random.randomTitle(aminoList.getList(), 'tymczasowyNickTuBedzieWArgumencieLecialo'));
+          res.end();
+        });
+          break;
+      case "/inputname":
+        fs.readFile(htmlPath, function(err, data){
+          res.writeHead(200, {'Conten-type': 'text/html'});
+          res.write(data);
           res.end();
         });
           break;
