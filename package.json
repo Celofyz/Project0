@@ -1,0 +1,26 @@
+{
+  "name": "project0",
+  "version": "1.0.0",
+  "description": "generates title from list of given titles using moon phase and sun angle",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "opn": "^5.4.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Celofyz/Project0.git"
+  },
+  "author": "celofyz, pecet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Celofyz/Project0/issues"
+  },
+  "homepage": "https://github.com/Celofyz/Project0#readme"
+}
