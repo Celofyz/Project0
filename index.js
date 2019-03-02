@@ -30,13 +30,11 @@ function sendAminoPostHandler(req){
   });
 }
 
-function setUsername(name){
-  username = name;
-}
-
 function getUserName(req){
+  console.log('start getUserName')
+  console.log(req.method)
   req.on('data', chunk =>{
-    setUsername(getPostRequestChunkValue(chunk.toString()));
+    console.log(chunk.toString());
   });
 }
 
@@ -77,7 +75,6 @@ function onRequest (req, res){
         break;
       case "/inputname":
         getUserName(req);
-        console.log('username: ' + username);
         htmlPath = 'inputname.html'
         break;
       default: break;
