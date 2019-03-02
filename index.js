@@ -6,6 +6,8 @@ var random = require('./unrandomThings');
 
 var time = new Date();
 
+var username = '';
+
 function getPostRequestChunkValue(chunk){
   let chunkstring = chunk.toString();
   let lng = chunkstring.length;
@@ -25,6 +27,16 @@ function getPostRequestChunkValue(chunk){
 function sendAminoPostHandler(req){
   req.on('data', chunk =>{
     aminoList.addAmino(getPostRequestChunkValue(chunk.toString()));
+  });
+}
+
+function setUsername(name){
+  username = name;
+}
+
+function getUserName(req){
+  req.on('data', chunk =>{
+    setUsername(getPostRequestChunkValue(chunk.toString()));
   });
 }
 
@@ -64,7 +76,8 @@ function onRequest (req, res){
         htmlPath = 'body.html'
         break;
       case "/inputname":
-        console.log('jakies imie dotarlo');
+        getUserName(req);
+        console.log('username: ' + username);
         htmlPath = 'inputname.html'
         break;
       default: break;
@@ -93,7 +106,7 @@ function onRequest (req, res){
         fs.readFile(htmlPath, function(err, data){
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.write(data);
-          res.write(random.randomTitle(aminoList.getList(), 'tymczasowyNickTuBedzieWArgumencieLecialo'));
+          res.write(random.randomTitle(aminoList.getList(), username));
           res.end();
         });
           break;
