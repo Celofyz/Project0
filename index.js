@@ -3,7 +3,6 @@ var opn = require('opn');
 var fs = require('fs');
 var aminoList = require('./AminoList');
 var random = require('./unrandomThings');
-var prompt = require('prompt');
 
 var time = new Date();
 
