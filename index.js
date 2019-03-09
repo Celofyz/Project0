@@ -17,6 +17,7 @@ function getPostRequestChunkValue(chunk){
 
     if(chunkcodeat == 61){
       chunkstring = chunkstring.slice(i+1);
+      console.log(chunkstring);
       return chunkstring;
     }
   }
@@ -35,11 +36,12 @@ function getUserName(req){
   console.log(req.method)
   req.on('data', chunk =>{
     console.log(chunk.toString());
+    username = getPostRequestChunkValue(chunk);
   });
 }
 
 function getRandomAmino(){
-  random.randomTitle(aminoList.getList());
+  random.randomTitle(aminoList.getList(), username);
 }
 
 /*Metoda obcina znak zapytania z konca linku
@@ -62,34 +64,6 @@ function onRequest (req, res){
   var htmlPath = 'body.html';
 
   var requestUrl = String(urlFixer(req.url));
-
-  if(req.method == 'POST'){
-    switch(requestUrl){
-      case "/sendamino":
-        sendAminoPostHandler(req);
-        htmlPath = 'body.html'
-        break;
-      case "/clearAminos":
-        aminoList.clearAminos();
-        htmlPath = 'body.html'
-        break;
-      case "/inputname":
-        getUserName(req);
-        htmlPath = 'inputname.html'
-        break;
-      default: break;
-    }
-  }else if(req.method == 'GET'){
-    switch(requestUrl){
-      case "/getrandomamino":
-        getRandomAmino();
-        htmlPath = 'wynik.html'
-        break;
-      default:
-        htmlPath = 'body.html'
-        break;
-    }
-  }
 
   if(req.url.indexOf('css') != -1){
     fs.readFile(cssPath, function(err, data){
@@ -123,7 +97,6 @@ function onRequest (req, res){
         });
           break;
     }
-
   }
 }
 

@@ -132,12 +132,14 @@ module.exports = {
 
   randomTitle: function(list, username){
     var time = new Date();
+
     var seed = moonPhase(time.getFullYear(), time.getMonth() + 1, time.getDate())
                 + name(String(username))
                 + sunAngle(time, 6.5, 46.5);
-    var randomElementId = seed % list.length;
-    var picked = list[randomElementId];
 
+    var randomElementId = seed % list.length;
+
+    var picked = list[randomElementId];
     picked = "<p id='Picked'>" + picked + '</p>';
 
     return picked;
